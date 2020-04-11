@@ -103,6 +103,7 @@ dist
 # TernJS port file
 .tern-port
 
+build
 prisma/migrations
 prisma/.env
 package-lock.json
