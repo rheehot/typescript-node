@@ -1,10 +1,18 @@
 import * as express from "express";
-import { Request, Response, NextFunction } from "express";
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
+import {
+  createUser,
+  createBook,
+  books,
+  updateBook,
+  deleteBook,
+} from "../controllers/apiController";
 
 const apiRouter = express.Router();
 
-apiRouter.get("/", (_, res): Response => res.send("api"));
+apiRouter.get("/books", books);
+apiRouter.get("/createUser", createUser);
+apiRouter.get("/createBook", createBook);
+apiRouter.get("/updateBook", updateBook);
+apiRouter.get("/deleteBook", deleteBook);
 
 export default apiRouter;
