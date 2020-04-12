@@ -1,0 +1,48 @@
+type User {
+  id: Int!
+  email: String!
+  username: String!
+  imageUrl: String!
+  rooms: [Room]! # graphql ✅
+  joinRooms: [Participant]! # graphql ✅
+  pendings: [Pending]! # graphql ✅
+  notifications: [Notification]! # graphql ✅
+}
+
+type Room {
+  id: Int!
+  manager: User! # graphql ✅
+  managerId: Int!
+  title: String!
+  info: String!
+  contactURL: String!
+  recruiting: Boolean!
+  isWaiting: Boolean!
+  isPending: Boolean! # graphql ✅
+  isManager: Boolean! # graphql ✅
+  participants: [Participant]! # graphql ✅
+  pendings: [Pending]! # graphql ✅
+}
+
+type Participant {
+  id: Int!
+  user: User! # graphql ✅
+  userId: Int!
+  room: Room! # graphql ✅
+  roomId: Int!
+}
+
+type Pending {
+  id: Int!
+  user: User! # graphql ✅
+  userId: Int!
+  room: Room! # graphql ✅
+  roomId: Int!
+}
+
+type Notification {
+  id: Int!
+  user: User! # graphql ✅
+  userId: Int!
+  text: String!
+}

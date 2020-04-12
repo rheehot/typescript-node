@@ -1,0 +1,3 @@
+type Mutation {
+  createRoom(title: String!, info: String!, contactURL: String!): Boolean
+}
